@@ -31,8 +31,6 @@ public class Manager {
             updatable = false)
     private LocalDateTime updateTime;
 
-    @ManyToOne
-    private Admin admin;
     @OneToMany(mappedBy = "manager")
     private List<Employee> employees;
 

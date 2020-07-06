@@ -1,3 +1,14 @@
+###
+POST http://localhost:8080/api/admin/addManager
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "user": {
+    "name": "SUu5",
+    "number": 2017018
+  }
+}
 
 ### 全局变量，如果http测试文件被改动，可能失效。须重修登录
 POST http://localhost:8080/api/login
@@ -9,4 +20,5 @@ Content-Type: application/json
 }
 
 > {% client.global.set("token", response.headers.valueOf("Authorization")); %}
+
 ###

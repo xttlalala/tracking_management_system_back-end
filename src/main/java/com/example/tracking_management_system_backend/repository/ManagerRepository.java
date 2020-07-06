@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ManagerRepository extends BaseRepository<Manager,Integer> {
+//    Manager findByNumber(int number);
 }

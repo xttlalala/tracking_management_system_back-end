@@ -13,7 +13,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties({"managers"})
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +29,6 @@ public class Admin {
             insertable = false,
             updatable = false)
     private LocalDateTime updateTime;
-    @OneToMany(mappedBy = "admin")
-    private List<Manager> managers;
+
 
 }
