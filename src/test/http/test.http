@@ -1,12 +1,29 @@
-###
+###删除项目经理  BY ID删除
+POST http://localhost:8080/api/admin/deleteManager
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "id": 5,
+  "user": {
+    "id": 5
+  }
+}
+
+###查找所有项目经理
+GET http://localhost:8080/api/admin/getManagers
+Authorization: {{token}}
+Accept: application/json
+
+###添加项目经理
 POST http://localhost:8080/api/admin/addManager
 Content-Type: application/json
 Authorization: {{token}}
 
 {
   "user": {
-    "name": "SUu5",
-    "number": 2017018
+    "name": "SUu34",
+    "number": 2017034
   }
 }
 

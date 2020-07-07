@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Slf4j
 @Service
 @Data
@@ -38,6 +40,12 @@ public class AdminService  {
         u.setRole(User.Role.MANAGER);
         log.debug("{}",manager);
         managerRepository.save(manager);
+    }
+    public List<Manager> getManagers(){
+        return managerRepository.findAll();
+    }
+    public void deleteManager(int mid){
+        managerRepository.deleteById(mid);
     }
 
 }

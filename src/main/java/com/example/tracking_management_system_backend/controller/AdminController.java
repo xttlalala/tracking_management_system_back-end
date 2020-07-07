@@ -26,6 +26,15 @@ public class AdminController {
     @PostMapping("addManager")
     public Map addManager(@RequestBody Manager m){
         adminService.addManager(m);
-        return Map.of("managers",managerRepository.findAll());
+        return Map.of("managers",adminService.getManagers());
+    }
+    @GetMapping("getManagers")
+    public Map getManagers(){
+        return Map.of("managers",adminService.getManagers());
+    }
+    @PostMapping("deleteManager")
+    public Map deleteManager(@RequestBody Manager m){
+        adminService.deleteManager(m.getId());
+        return Map.of("managers",adminService.getManagers());
     }
 }
